@@ -6,8 +6,8 @@ class ContextQuestionAnswering:
     def __init__(self):
         self.model = build_model(
             config='qa_multisberquad_bert',
-            install=True,
-            download=True
+            # install=True,
+            # download=True
         )
 
     def get_answer(self, context: str, query: str) -> str:
