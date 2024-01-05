@@ -11,7 +11,7 @@ class ContextQuestionAnswering:
         )
 
     def get_answer(self, context: str, query: str) -> str:
-        return self.model(context, query)
+        return self.model([context], [query])
 
 
 model = ContextQuestionAnswering()
