@@ -6,10 +6,17 @@ app = Flask(__name__)
 
 @app.post('/answer-question')
 def answer_question():
+    print('Received request')
     context = request.get_json()['context']
     query = request.get_json()['query']
 
-    return {'answer': get_answer(context, query)}
+    print('Query is ', query)
+    print('Context is ', context)
+
+    answer = get_answer(context, query)
+    print('Answer is ', answer)
+
+    return {'answer': answer}
 
 
 if __name__ == '__main__':
